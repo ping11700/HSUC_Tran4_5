@@ -1,0 +1,72 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Common.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Dictionary_Styles.xaml" />
+        <ResourceDictionary Source="/Common;component/Resources/CommonResources/CommonResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Window_CornerStyle" TargetType="{x:Type local:Window_Corner}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="0"
+                    CornerRadius="{StaticResource Common_CornerRadius01}"
+                    GlassFrameThickness="0"
+                    NonClientFrameEdges="None" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <!--  Window模板  -->
+                <ControlTemplate TargetType="{x:Type local:Window_Corner}">
+                    <!--<Border BorderThickness="0.5" BorderBrush="#26FFFFFF">-->
+                    <Grid Background="{TemplateBinding Background}">
+                        <!--  内容  -->
+                        <ContentPresenter ClipToBounds="True" />
+                        <!--  窗体按钮  -->
+                        <Canvas
+                            Width="50"
+                            Height="20"
+                            Margin="0,16,16,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Panel.ZIndex="10">
+                            <!--  最小化  -->
+                            <Button
+                                x:Name="Btn_Min"
+                                Width="16"
+                                Height="16"
+                                Margin="0,-8,0,0"
+                                Cursor="Hand"
+                                Foreground="White"
+                                Style="{StaticResource PathButtonStyle}"
+                                Visibility="{Binding IsShowMin, Converter={StaticResource boolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Path Data="{StaticResource pathMin}" />
+                            </Button>
+                            <!--  关闭  -->
+                            <Button
+                                x:Name="Btn_Close"
+                                Canvas.Right="0"
+                                Width="16"
+                                Height="16"
+                                Cursor="Hand"
+                                Foreground="White"
+                                Style="{StaticResource PathButtonStyle}"
+                                Visibility="{Binding IsShowClose, Converter={StaticResource boolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Path Data="{StaticResource pathClose}" />
+                            </Button>
+                        </Canvas>
+                    </Grid>
+                    <!--</Border>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+

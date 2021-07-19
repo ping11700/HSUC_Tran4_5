@@ -1,0 +1,96 @@
+﻿<Window
+    x:Class="HSUC_Tran4_5.Tools.AppConfigWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="启动配置窗"
+    Width="300"
+    Height="300"
+    Topmost="True"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Background="#F0F0F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Margin="30,15,10,0"
+            Orientation="Horizontal">
+            <TextBlock Text="打开命令行窗口?" />
+            <RadioButton
+                x:Name="openConsole"
+                Margin="5,0,0,0"
+                Content="是" />
+            <RadioButton
+                Margin="10,0,0,0"
+                Content="否"
+                IsChecked="True" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+            Margin="30,15,30,0"
+            Orientation="Horizontal">
+            <TextBlock Margin="0,3,5,0" Text="选择测试环境:" />
+            <ComboBox
+                x:Name="Environment_Combo"
+                Width="70"
+                VerticalAlignment="Top"
+                SelectedIndex="0">
+                <ComboBoxItem Content="Beta" />
+                <ComboBoxItem Content="测试" />
+                <ComboBoxItem Content="线上" />
+            </ComboBox>
+        </StackPanel>
+        <StackPanel
+            Grid.Row="2"
+            Margin="30,15,30,0"
+            Orientation="Horizontal">
+            <TextBlock Margin="0,3,5,0" Text="当前版本：" />
+            <TextBlock x:Name="CurrentAssemblyNum_Tb" Margin="0,3,5,0" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="3"
+            Margin="30,15,30,0"
+            Orientation="Horizontal">
+            <TextBlock Margin="0,3,5,0" Text="程序集：" />
+            <TextBox
+                Width="150"
+                Background="Transparent"
+                Text="{Binding AssemblyNum, Mode=TwoWay}" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="4"
+            Margin="30,15,30,0"
+            Orientation="Horizontal">
+            <TextBlock Text="Channel:" />
+            <RadioButton
+                x:Name="win0_RB"
+                Margin="15,0,0,0"
+                Content="win0" />
+            <RadioButton
+                Margin="15,0,0,0"
+                Content="win100"
+                IsChecked="True" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="5"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="75"
+                Height="30"
+                VerticalAlignment="Top"
+                Background="CadetBlue"
+                Click="OK_Clicked"
+                Content="确定"
+                IsDefault="True" />
+        </StackPanel>
+    </Grid>
+</Window>

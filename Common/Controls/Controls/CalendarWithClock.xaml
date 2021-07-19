@@ -1,0 +1,79 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attach="clr-namespace:Common.AttachedPproperty"
+    xmlns:local="clr-namespace:Common.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common;component/Resources/CommonResources/CommonResources.xaml" />
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Buttons/Button_Base.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type local:CalendarWithClock}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Foreground" Value="{DynamicResource Common_FontBlack}" />
+        <Setter Property="Background" Value="{DynamicResource Common_White}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Common_GrayWhite}" />
+        <Setter Property="attach:TitleElement.Background" Value="{DynamicResource Common_Blue01}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="8,0,8,8" />
+        <Setter Property="ShowConfirmButton" Value="True" />
+        <Setter Property="attach:BorderElement.CornerRadius" Value="{StaticResource Common_CornerRadius04}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CalendarWithClock}">
+                    <local:SimplePanel>
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{Binding Path=(attach:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            Effect="{StaticResource EffectShadow2}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Border
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                Height="50"
+                                VerticalAlignment="Top"
+                                Background="{Binding Path=(attach:TitleElement.Background), RelativeSource={RelativeSource TemplatedParent}}"
+                                CornerRadius="{Binding Path=(attach:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource cornerRadiusSplitConverter}, ConverterParameter='1,1,0,0'}" />
+                            <ContentPresenter
+                                x:Name="PART_CalendarPresenter"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0" />
+                            <ContentPresenter
+                                x:Name="PART_ClockPresenter"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1" />
+                            <Button
+                                Name="PART_ButtonConfirm"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Width="180"
+                                Height="30"
+                                Margin="0,0,0,20"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource Common_Blue01}"
+                                Content="确认"
+                                Style="{StaticResource ButtonBaseStyle}"
+                                Visibility="{TemplateBinding ShowConfirmButton,
+                                                             Converter={StaticResource boolToVisibilityConverter}}" />
+                        </Grid>
+                    </local:SimplePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

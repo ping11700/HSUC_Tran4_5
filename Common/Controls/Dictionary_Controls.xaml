@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+
+        <!--  *********************************  -->
+        <!--  Styles 样式表  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Dictionary_Styles.xaml" />
+        <!--  Styles 样式表  -->
+        <!--  *********************************  -->
+
+
+        <!--  *********************************  -->
+        <!--  控件  -->
+
+        <!--  *********************************  -->
+        <!--  Button控件  -->
+        <!--  Button_AVDecode  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_AVDecode.xaml" />
+        <!--  Button_AVDecode  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_ClockRadio.xaml" />
+        <!--  Button_FIcon  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_FIcon.xaml" />
+        <!--  Path按钮  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_Path.xaml" />
+        <!--  Button_PlayNext  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_PlayNext.xaml" />
+        <!--  Button_RadioText  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_RadioText.xaml" />
+        <!--  Button_PlayerSound  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_PlayerSound.xaml" />
+        <!--  Button_Text  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_Text.xaml" />
+        <!--  Button_Resolution  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_Resolution.xaml" />
+        <!--  Button_Fix  -->
+        <ResourceDictionary Source="/Common;component/Controls/Buttons/Button_Fix.xaml" />
+        <!--  Button控件  -->
+        <!--  *********************************  -->
+
+
+        <!--  *********************************  -->
+        <!--  Control控件  -->
+        <!--  CalendarWithClock  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/CalendarWithClock.xaml" />
+        <!--  Clock  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/Clock.xaml" />
+        <!--  Clock_Animation  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/Clock_Animation.xaml" />
+
+
+        <!--  DateTimePicker  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/DateTimePicker.xaml" />
+        <!--  NumericUpDown  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/NumericUpDown.xaml" />
+        <!--  SimpleItemsControl  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/SimpleItemsControl.xaml" />
+        <!--  SideMenu  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/SideMenu.xaml" />
+        <!--  SideMenuItem  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/SideMenuItem.xaml" />
+        <!--  ToggleBlock  -->
+        <ResourceDictionary Source="/Common;component/Controls/Controls/ToggleBlock.xaml" />
+
+        <!--  Control控件  -->
+        <!--  *********************************  -->
+
+
+
+
+        <!--  *********************************  -->
+        <!--  Expander控件  -->
+        <!--  Expander_MovieSeries  -->
+        <ResourceDictionary Source="/Common;component/Controls/Expander/Expander_MovieSeries.xaml" />
+
+        <!--  Expander控件  -->
+        <!--  *********************************  -->
+
+
+
+
+        <!--  *********************************  -->
+        <!--  ListViews控件  -->
+        <!--  ListView_Null  -->
+        <ResourceDictionary Source="/Common;component/Controls/ListViews/ListView_Null.xaml" />
+        <!--  ListView_MovieSeries  -->
+        <ResourceDictionary Source="/Common;component/Controls/ListViews/ListView_MovieSeries.xaml" />
+
+        <!--  ListViews控件  -->
+        <!--  *********************************  -->
+
+
+
+
+        <!--  *********************************  -->
+        <!--  ProcessBars控件  -->
+        <!--  BusyBox  -->
+        <ResourceDictionary Source="/Common;component/Controls/ProcessBars/BusyBox.xaml" />
+        <!--  Gearwheels  -->
+        <ResourceDictionary Source="/Common;component/Controls/ProcessBars/Gearwheels.xaml" />
+        <!--  ProgressRing  -->
+        <ResourceDictionary Source="/Common;component/Controls/ProcessBars/ProgressRing.xaml" />
+        <!--  WaveProgressBar  -->
+        <ResourceDictionary Source="/Common;component/Controls/ProcessBars/WaveProgressBar.xaml" />
+
+        <!--  ProcessBars控件  -->
+        <!--  *********************************  -->
+
+
+        <!--  PasswordBoxs控件  -->
+        <!--  PasswordBoxs  -->
+        <ResourceDictionary Source="/Common;component/Controls/PasswordBoxs/PasswordBox_Eye.xaml" />
+
+        <!--  PasswordBoxs控件  -->
+
+
+
+
+
+
+        <!--  *********************************  -->
+        <!--  ScrollViewers控件  -->
+        <!--  ScrollViewer_Anima控件  -->
+        <ResourceDictionary Source="/Common;component/Controls/ScrollViewers/ScrollViewer_Anima.xaml" />
+        <!--  ScrollViewers控件  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  Slider控件  -->
+        <ResourceDictionary Source="/Common;component/Controls/Sliders/Slider_PlayerSound.xaml" />
+        <!--  Slider控件  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  TabControl控件  -->
+        <ResourceDictionary Source="/Common;component/Controls/TabControls/TabControl_Scrollable.xaml" />
+        <ResourceDictionary Source="/Common;component/Controls/TabControls/TabItem_FIcon.xaml" />
+        <!--  TabControl控件  -->
+        <!--  *********************************  -->
+
+        <!--  *********************************  -->
+        <!--  TextBox控件  -->
+        <ResourceDictionary Source="/Common;component/Controls/TextBoxs/TextBox_Error.xaml" />
+        <!--  TextBox控件  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  Windows控件  -->
+        <ResourceDictionary Source="/Common;component/Controls/Windows/Window_Corner.xaml" />
+        <!--  Windows控件  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  控件  -->
+        <!--  *********************************  -->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

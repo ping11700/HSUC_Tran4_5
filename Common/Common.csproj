@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CE1EA61-A49E-4A1E-A652-26F33AB02B68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttachedPproperty\BorderElement.cs" />
+    <Compile Include="AttachedPproperty\DataGridAttach.cs" />
+    <Compile Include="AttachedPproperty\IconElement.cs" />
+    <Compile Include="AttachedPproperty\IconSwitchElement.cs" />
+    <Compile Include="AttachedPproperty\MenuTopLineAttach.cs" />
+    <Compile Include="AttachedPproperty\TextInfoElement.cs" />
+    <Compile Include="AttachedPproperty\TitleElement.cs" />
+    <Compile Include="CommonData.cs" />
+    <Compile Include="Controls\Buttons\Button_AVDecode.xaml.cs">
+      <DependentUpon>Button_AVDecode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_ClockRadio.xaml.cs">
+      <DependentUpon>Button_ClockRadio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_FIcon.xaml.cs">
+      <DependentUpon>Button_FIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_Fix.xaml.cs">
+      <DependentUpon>Button_Fix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_Path.xaml.cs">
+      <DependentUpon>Button_Path.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_PlayerSound.xaml.cs">
+      <DependentUpon>Button_PlayerSound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_PlayNext.xaml.cs">
+      <DependentUpon>Button_PlayNext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_RadioText.xaml.cs">
+      <DependentUpon>Button_RadioText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_Resolution.xaml.cs">
+      <DependentUpon>Button_Resolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\Button_Text.xaml.cs">
+      <DependentUpon>Button_Text.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\CalendarWithClock.xaml.cs">
+      <DependentUpon>CalendarWithClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\Clock.xaml.cs">
+      <DependentUpon>Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\ClockBase.cs" />
+    <Compile Include="Controls\Controls\ClockNumber_Animation.cs" />
+    <Compile Include="Controls\Controls\Clock_Animation.xaml.cs">
+      <DependentUpon>Clock_Animation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\DateTimePicker.xaml.cs">
+      <DependentUpon>DateTimePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\EmptyContent.cs" />
+    <Compile Include="Controls\Controls\HeaderedSimpleItemsControl.cs" />
+    <Compile Include="Controls\Controls\NumericUpDown.xaml.cs">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\SideMenu.xaml.cs">
+      <DependentUpon>SideMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\SideMenuItem.xaml.cs">
+      <DependentUpon>SideMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\SimpleItemsControl.xaml.cs">
+      <DependentUpon>SimpleItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Controls\ToggleBlock.xaml.cs">
+      <DependentUpon>ToggleBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Expander\Expander_MovieSeries.xaml.cs">
+      <DependentUpon>Expander_MovieSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListViews\ListView_MovieSeries.xaml.cs">
+      <DependentUpon>ListView_MovieSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListViews\ListView_Null.xaml.cs">
+      <DependentUpon>ListView_Null.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Panel\ButtonGroup.cs" />
+    <Compile Include="Controls\Panel\CirclePanel.cs" />
+    <Compile Include="Controls\Panel\SimplePanel.cs" />
+    <Compile Include="Controls\PasswordBoxs\PasswordBox_Eye.xaml.cs">
+      <DependentUpon>PasswordBox_Eye.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Popups\Popup_TimerClose.cs" />
+    <Compile Include="Controls\ProcessBars\BusyBox.xaml.cs">
+      <DependentUpon>BusyBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProcessBars\Gearwheels.xaml.cs">
+      <DependentUpon>Gearwheels.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProcessBars\ProgressRing.xaml.cs">
+      <DependentUpon>ProgressRing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProcessBars\WaveProgressBar.xaml.cs">
+      <DependentUpon>WaveProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScrollViewers\ScrollViewer_Anima.xaml.cs">
+      <DependentUpon>ScrollViewer_Anima.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sliders\Slider_PlayerSound.xaml.cs">
+      <DependentUpon>Slider_PlayerSound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabControls\TabControl_Scrollable.xaml.cs">
+      <DependentUpon>TabControl_Scrollable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabControls\TabItem_FIcon.xaml.cs">
+      <DependentUpon>TabItem_FIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBoxs\TextBox_Error.xaml.cs">
+      <DependentUpon>TextBox_Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Utils\Data\CommonData.cs" />
+    <Compile Include="Controls\Utils\Interfaces\ISelectable.cs" />
+    <Compile Include="Controls\WebBroswers\WebBrowserUC.xaml.cs">
+      <DependentUpon>WebBrowserUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\WindowBlur.cs" />
+    <Compile Include="Controls\Windows\Window_Corner.xaml.cs">
+      <DependentUpon>Window_Corner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converts\AddConverterByPara.cs" />
+    <Compile Include="Converts\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converts\BorderCircularClipConverter.cs" />
+    <Compile Include="Converts\BorderCircularConverter.cs" />
+    <Compile Include="Converts\CornerRadiusSplitConverter.cs" />
+    <Compile Include="Converts\DoubleMinConverter.cs" />
+    <Compile Include="Converts\ExpanderRotateAngleConverter.cs" />
+    <Compile Include="Converts\InverseBoolConverter.cs" />
+    <Compile Include="Converts\InverseBoolToVisibilityConverter.cs" />
+    <Compile Include="Converts\InverseStringToVisibilityConverter.cs" />
+    <Compile Include="Converts\MarginConverterByPara.cs" />
+    <Compile Include="Converts\NumberConverterByPara.cs" />
+    <Compile Include="Converts\PercentToAngleConverter.cs" />
+    <Compile Include="Converts\PhoneHideConverter.cs" />
+    <Compile Include="Converts\StringToNumberConverterByPara.cs" />
+    <Compile Include="Converts\StringToVisibilityConverter.cs" />
+    <Compile Include="Converts\SubConverterByPara.cs" />
+    <Compile Include="Converts\ThicknessLeftToDoubleConverter.cs" />
+    <Compile Include="Executer.cs" />
+    <Compile Include="IsExternalInit.cs" />
+    <Compile Include="Log4\Log.cs" />
+    <Compile Include="Log4\LogCommon.cs" />
+    <Compile Include="Log4\LogService.cs" />
+    <Compile Include="MVVM.cs" />
+    <Compile Include="NotifyPropertyChangedBase.cs" />
+    <Compile Include="OSVersion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\CommonResources\CommonResources.cs" />
+    <Compile Include="SystemAPI\CursorAPI.cs" />
+    <Compile Include="SystemAPI\ScreenAPI.cs" />
+    <Compile Include="SystemAPI\TaskbarAPI.cs" />
+    <Compile Include="SystemAPI\WindowAPI.cs" />
+    <Compile Include="UAssert.cs" />
+    <Compile Include="UCCommand.cs" />
+    <Compile Include="Utils\AnimationHelper.cs" />
+    <Compile Include="Utils\ArithmeticHelper.cs" />
+    <Compile Include="Utils\DeepCopyHelper.cs" />
+    <Compile Include="Utils\DirectoryFileHelper.cs" />
+    <Compile Include="Utils\DNSHelper.cs" />
+    <Compile Include="Utils\Extension\StringExtension.cs" />
+    <Compile Include="Utils\IOHelper.cs" />
+    <Compile Include="Utils\MathHelper.cs" />
+    <Compile Include="Utils\PropertyNameHelper.cs" />
+    <Compile Include="Utils\Regex\CommonData.cs" />
+    <Compile Include="Utils\Regex\RegexHelper.cs" />
+    <Compile Include="Utils\Regex\RegexJudgment.cs" />
+    <Compile Include="Utils\ValidateDataHelper.cs" />
+    <Compile Include="Utils\VisualHelper.cs" />
+    <Compile Include="Win32API.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Buttons\Button_AVDecode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_ClockRadio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_FIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_Fix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_Path.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_PlayerSound.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_PlayNext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_RadioText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_Resolution.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Buttons\Button_Text.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\CalendarWithClock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\Clock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\Clock_Animation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\DateTimePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\NumericUpDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\SideMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\SideMenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\SimpleItemsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\ToggleBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Dictionary_Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Expander\Expander_MovieSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ListViews\ListView_MovieSeries.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ListViews\ListView_Null.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PasswordBoxs\PasswordBox_Eye.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProcessBars\BusyBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProcessBars\Gearwheels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProcessBars\ProgressRing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProcessBars\WaveProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ScrollViewers\ScrollViewer_Anima.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sliders\Slider_PlayerSound.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TabControls\TabControl_Scrollable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TabControls\TabItem_FIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextBoxs\TextBox_Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WebBroswers\WebBrowserUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Windows\Window_Corner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Buttons\Button_Base.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Buttons\Button_Path.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Calenders\Calender_Picker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\CheckBoxs\CheckBoxBase_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ContextMenus\ContextMenuBase_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\DataGrids\DataGridBase_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Dictionary_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Menus\Menu_BaseStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ProcessBars\ProcessBar_Simple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ProcessBars\ProcessBar_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\RepeatButtons\RepeatButton_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ScrollBars\ScrollBarBase_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ToggleButtons\ToggleButton_Switch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\ToggleButtons\ToggleButton_Transparent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\Windows\WindowCornerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FIcons\FIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\CommonResources\CommonResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ImageResources\ImageResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\ReadMe.txt" />
+    <Content Include="FIcons\demo.html" />
+    <Content Include="Log4\ReadMe.txt" />
+    <Content Include="Resources\ImageResources\gearwheel01.png" />
+    <Content Include="Resources\ImageResources\gearwheel02.png" />
+    <Content Include="Resources\ImageResources\gearwheel03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FIcons\iconfont.ttf" />
+    <None Include="log4net.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\ToggleButton\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

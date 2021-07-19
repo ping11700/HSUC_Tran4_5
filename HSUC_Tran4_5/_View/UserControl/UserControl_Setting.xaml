@@ -1,0 +1,186 @@
+﻿<UserControl
+    x:Class="HSUC_Tran4_5._View.UserControl_Setting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attach="clr-namespace:Common.AttachedPproperty;assembly=Common"
+    xmlns:controls="clr-namespace:Common.Controls;assembly=Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Common;component/Theme/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox
+            Grid.Column="0"
+            Width="240"
+            Foreground="{DynamicResource Common_FontBlack}"
+            Header="服务器配置">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <controls:TextBox_Error
+                        Width="150"
+                        Margin="3"
+                        attach:TextInfoElement.Watermark="服务器地址:127.0.0.0.1"
+                        RegexType="Ip" />
+                    <controls:TextBox_Error
+                        Width="65"
+                        Margin="3"
+                        attach:TextInfoElement.Watermark="端口1008"
+                        RegexType="Number" />
+                </StackPanel>
+                <controls:TextBox_Error
+                    Margin="3"
+                    attach:TextInfoElement.Watermark="主推订阅地址"
+                    RegexType="Ip" />
+
+
+                <controls:PasswordBox_Eye
+                    Width="200"
+                    RegexType="IsPassword"
+                    ShowEyeButton="True" />
+
+            </StackPanel>
+
+
+        </GroupBox>
+
+        <GroupBox
+            Grid.Column="1"
+            Foreground="{DynamicResource Common_FontBlack}"
+            Header="系统配置">
+            <StackPanel>
+
+                <!--  开关  -->
+                <GroupBox>
+                    <StackPanel>
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="登陆系统" />
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                            <TextBlock VerticalAlignment="Center" Text="秒后自动开启任务运行监视" />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="开启统一监控,监控端口" />
+                            <controls:TextBox_Error
+                                MinHeight="25"
+                                attach:TextInfoElement.RegexPattern="NumberPattern"
+                                attach:TextInfoElement.Watermark="端口范围为0~65535"
+                                RegexType="IpA" />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+
+
+
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="定时关闭监控和所有任务" />
+                            <controls:DateTimePicker />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="超过指定时间关闭转换机主程序" />
+                            <controls:DateTimePicker />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="删除日期超过" />
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                            <TextBlock VerticalAlignment="Center" Text="天的日志" />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6" Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="压缩日志" />
+                            <ToggleButton
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ToggleButtonSwitch}" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                            <TextBlock VerticalAlignment="Center" Text="分钟内无任何操作, 即为无人状态" />
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="任务监视中, 每间隔" />
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                            <TextBlock VerticalAlignment="Center" Text="秒检查并启动任务" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="任务启动间隔" />
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <controls:NumericUpDown
+                                MinWidth="60"
+                                Margin="3"
+                                Minimum="0"
+                                ShowUpDownButton="True" />
+                            <TextBlock VerticalAlignment="Center" Text="分钟内任务无法自动关闭时, 强行关闭任务" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

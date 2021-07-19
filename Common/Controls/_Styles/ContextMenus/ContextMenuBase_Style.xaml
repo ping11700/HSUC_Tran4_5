@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common;component/Resources/CommonResources/CommonResources.xaml" />
+        <ResourceDictionary Source="/Common;component/Controls/ScrollViewers/ScrollViewer_Anima.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+
+
+    <Style x:Key="ContextMenuBase_Style" TargetType="ContextMenu">
+        <Setter Property="Background" Value="{DynamicResource Common_White05}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Border
+                        MaxHeight="{TemplateBinding MaxHeight}"
+                        Margin="8"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="2"
+                        Effect="{StaticResource EffectShadow2}">
+                        <ScrollViewer Margin="0,6" Style="{StaticResource ScrollViewer_AnimaStyle}">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource ContextMenuBase_Style}" TargetType="ContextMenu" />
+
+
+</ResourceDictionary>

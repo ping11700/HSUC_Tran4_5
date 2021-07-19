@@ -1,0 +1,129 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Common.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Common;component/Resources/CommonResources/CommonResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style x:Key="SizeChangeListViewItemStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <Border>
+                        <ContentPresenter Margin="{Binding ItemPadding, RelativeSource={RelativeSource AncestorType={x:Type local:ListView_Null}}}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsSelected" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="FontSize" Value="20" />
+                        </MultiTrigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource Common_Red}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:Button_Resolution}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Button_Resolution}">
+                    <Grid>
+                        <TextBlock
+                            x:Name="PART_TB"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Text="{Binding SelectedValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <local:Popup_TimerClose
+                            x:Name="PART_Popup"
+                            PlacementRectangle="-120,0,0,0"
+                            PopupAnimation="Slide"
+                            VerticalOffset="-120">
+                            <Border Background="{StaticResource Common_Dark01}" CornerRadius="6">
+                                <local:ListView_Null
+                                    x:Name="PART_LV"
+                                    Padding="16"
+                                    Background="{TemplateBinding Background}"
+                                    Foreground="#868686"
+                                    ItemContainerStyle="{StaticResource SizeChangeListViewItemStyle}"
+                                    ItemPadding="16"
+                                    ItemsSource="{Binding ItemS, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Orientation_LV="Horizontal"
+                                    SelectedItem="{Binding SelectedValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Border>
+                        </local:Popup_TimerClose>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="PART_TB" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PART_TB" Property="Foreground" Value="{StaticResource Common_Red}" />
+                        </Trigger>
+                        <Trigger SourceName="PART_TB" Property="IsMouseOver" Value="False">
+                            <Setter TargetName="PART_TB" Property="Foreground" Value="{StaticResource Common_White}" />
+                        </Trigger>
+
+                        <EventTrigger RoutedEvent="MouseEnter" SourceName="PART_TB">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen">
+                                        <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave" SourceName="PART_TB">
+                            <BeginStoryboard x:Name="Delay_BeginStoryboard">
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen">
+                                        <DiscreteBooleanKeyFrame KeyTime="0:0:3" Value="False" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseEnter" SourceName="PART_Popup">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen">
+                                        <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave" SourceName="PART_Popup">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="PART_Popup" Storyboard.TargetProperty="IsOpen">
+                                        <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="False" />
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+
+                        <Trigger Property="IsCloseS" Value="True">
+                            <Trigger.EnterActions>
+                                <RemoveStoryboard BeginStoryboardName="Delay_BeginStoryboard" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

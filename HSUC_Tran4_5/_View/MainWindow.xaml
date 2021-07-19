@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="HSUC_Tran4_5._View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Common.Controls;assembly=Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HSUC_Tran4_5._View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:HSUC_Tran4_5._ViewModel"
+    Width="800"
+    Height="600"
+    d:DataContext="{d:DesignInstance vm:ViewModel_MainWindow}"
+    Background="Gray"
+    Style="{DynamicResource WindowChromeStyle}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Common;component/Theme/Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--  window header  -->
+        <local:UserControl_WinHeader
+            Grid.Row="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Panel.ZIndex="2"
+            MouseMove="Window_MouseMove" />
+        <!--  window header  -->
+
+        <TabControl
+            Grid.Row="1"
+            BorderThickness="0"
+            TabStripPlacement="Left">
+            <controls:TabItem_FIcon Header="数据监视" TIFIcon="&#xe643;">
+                <local:UserControl_ProcessMonitor />
+            </controls:TabItem_FIcon>
+
+            <controls:TabItem_FIcon Header="设置" TIFIcon="&#xe604;">
+                <local:UserControl_Setting />
+            </controls:TabItem_FIcon>
+
+            <controls:TabItem_FIcon Header="设置" TIFIcon="&#xe604;">
+                <controls:Clock_Animation />
+            </controls:TabItem_FIcon>
+            <!--  时钟  -->
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <!--  *********************************  -->
+        <!--  Buttons Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Buttons/Button_Path.xaml" />
+        <!--  Button_Base Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Buttons/Button_Base.xaml" />
+        <!--  Buttons Styles  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  Calenders Styles  -->
+        <!--  Calender_Picker Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Calenders/Calender_Picker.xaml" />
+
+        <!--  Calenders Styles  -->
+        <!--  *********************************  -->
+
+        <!--  *********************************  -->
+        <!--  CheckBoxs Styles  -->
+        <!--  CheckBoxBase_Style Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/CheckBoxs/CheckBoxBase_Style.xaml" />
+
+        <!--  CheckBoxs Styles  -->
+        <!--  *********************************  -->
+
+        <!--  *********************************  -->
+        <!--  ContextMenus Styles  -->
+        <!--  ContextMenuBase_Style Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ContextMenus/ContextMenuBase_Style.xaml" />
+
+        <!--  ContextMenus Styles  -->
+        <!--  *********************************  -->
+
+        <!--  *********************************  -->
+
+        <!--  DataGrids Styles  -->
+        <!--  DataGridBase_Style  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/DataGrids/DataGridBase_Style.xaml" />
+
+        <!--  DataGrids Styles  -->
+
+        <!--  *********************************  -->
+
+
+        <!--  *********************************  -->
+
+        <!--  Menu Styles  -->
+        <!--  Menu_BaseStyle  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Menus/Menu_BaseStyle.xaml" />
+
+        <!--  Menu Styles  -->
+
+        <!--  *********************************  -->
+
+        <!--  *********************************  -->
+        <!--  ProcessBar Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ProcessBars/ProcessBar_Style.xaml" />
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ProcessBars/ProcessBar_Simple.xaml" />
+        <!--  ProcessBar Styles  -->
+        <!--  *********************************  -->
+
+
+       
+
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  ToggleButton Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Switch.xaml" />
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Transparent.xaml" />
+
+        <!--  ToggleButton Styles  -->
+        <!--  *********************************  -->
+
+
+        <!--  *********************************  -->
+        <!--  RepeatButtons Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/RepeatButtons/RepeatButton_Style.xaml" />
+        <!--  RepeatButtons Styles  -->
+        <!--  *********************************  -->
+
+
+
+
+
+
+        <!--  *********************************  -->
+        <!--  ScrollBars Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ScrollBars/ScrollBarBase_Style.xaml" />
+        <!--  ScrollBars Styles  -->
+        <!--  *********************************  -->
+
+
+        <!--  *********************************  -->
+        <!--  Windows Styles  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/Windows/WindowCornerStyle.xaml" />
+        <!--  Windows Styles  -->
+        <!--  *********************************  -->
+
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
