@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Interop;
 
@@ -6,6 +7,14 @@ namespace Common.SystemAPI
 {
     public class WindowAPI
     {
+
+
+        public static Window GetActiveWindow() => Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+
+
+
+
+
         /*hWndInsertAfter，[输入]：
  存放要将hWnd参数指定的窗口定位在哪个窗口句柄的前面，不能为NULL，也可以为（选一至一个）：
  HWND_BOTTOM（1）：

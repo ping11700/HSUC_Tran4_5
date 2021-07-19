@@ -78,6 +78,9 @@
     <Compile Include="_View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_View\MessageWindows\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_View\UserControl\UserControl_ProcessMonitor.xaml.cs">
       <DependentUpon>UserControl_ProcessMonitor.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
     <Page Include="_View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_View\MessageWindows\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_View\UserControl\UserControl_ProcessMonitor.xaml">
       <Generator>MSBuild:Compile</Generator>
