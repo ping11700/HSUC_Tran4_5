@@ -38,6 +38,7 @@
             <controls:Button_FIcon
                 Margin="0,0,20,0"
                 BFIcon="&#xe652;"
+                Command="{Binding LoginCmd}"
                 Foreground="{DynamicResource Common_FontWhite}" />
 
             <!--  置顶窗口  -->

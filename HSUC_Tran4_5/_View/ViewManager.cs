@@ -9,9 +9,14 @@ namespace HSUC_Tran4_5._View
 
         public static ViewManager Instance => lazy.Value;
 
-        private ViewManager() { }
+        public MainWindow MainWin { get; init; }
 
-        public MainWindow MainWin { get; private set; }
+        private ViewManager() {
+        
+            MainWin = new MainWindow() { DataContext = ViewModelManager.Instance.VM_MainWindow };
+
+        }
+
 
 
         /// <summary>
@@ -19,8 +24,6 @@ namespace HSUC_Tran4_5._View
         /// </summary>
         public void Init()
         {
-            CreateView();
-
             MainWin.Show();
         }
 
@@ -30,26 +33,11 @@ namespace HSUC_Tran4_5._View
         /// </summary>
         public void Dispose()
         {
-            DisposeView();
-        }
-
-
-        /// <summary>
-        /// 创建View
-        /// </summary>
-        private void CreateView()
-        {
-            MainWin = new MainWindow() { DataContext = ViewModelManager.Instance.VM_MainWindow };
-        }
-
-
-
-        /// <summary>
-        /// 释放View
-        /// </summary>
-        private void DisposeView()
-        {
             MainWin.Close();
+
         }
+
+
+        
     }
 }

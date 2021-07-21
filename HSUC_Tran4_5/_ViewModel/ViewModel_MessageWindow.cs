@@ -1,14 +1,26 @@
 ﻿using Common;
 using HSUC_Tran4_5._Model;
 using HSUC_Tran4_5._View;
+using HSUC_Tran4_5.Utils;
 using System;
 
 namespace HSUC_Tran4_5._ViewModel
 {
-    public partial class ViewModel_MainWindow : ViewModelBase
+    public partial class ViewModel_MessageWindow : ViewModelBase
     {
 
-        public DataService DataSer { get; init; }
+        private MessWinTypes messageWinType;
+        public MessWinTypes MessageWinType
+        {
+            get => messageWinType;
+            set 
+            {
+                messageWinType = value;
+                NotifyPropertyChanged(nameof(MessageWinType));
+            }
+
+
+        }
 
 
         #region 命令

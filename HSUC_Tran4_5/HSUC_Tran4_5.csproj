@@ -67,19 +67,28 @@
     <Compile Include="Tools\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\CommonData.cs" />
     <Compile Include="Utils\ClientVersion.cs" />
     <Compile Include="_Model\CommonData\DemoType.cs" />
     <Compile Include="_Model\DataService.cs" />
     <Compile Include="_Model\DemoDataModel.cs" />
     <Compile Include="_ViewModel\ViewModelManager.cs" />
+    <Compile Include="_ViewModel\ViewModel_MessageWindow.cs" />
     <Compile Include="_ViewModel\ViewModel_MainWindow.cs" />
     <Compile Include="_ViewModel\ViewModel_MainWindow_DataGrid01.cs" />
     <Compile Include="_View\IBaseWin.cs" />
     <Compile Include="_View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_View\MessageWindows\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="_View\MessageWindows\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\UserControl\TemplateSelector\MessageWinTemplateSelector.cs" />
+    <Compile Include="_View\UserControl\UserControl_Login.xaml.cs">
+      <DependentUpon>UserControl_Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_View\UserControl\UserControl_TaskConfig.xaml.cs">
+      <DependentUpon>UserControl_TaskConfig.xaml</DependentUpon>
     </Compile>
     <Compile Include="_View\UserControl\UserControl_ProcessMonitor.xaml.cs">
       <DependentUpon>UserControl_ProcessMonitor.xaml</DependentUpon>
@@ -107,9 +116,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="_View\MessageWindows\UserControl1.xaml">
+    <Page Include="_View\MessageWindows\MessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\UserControl\UserControl_Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_View\UserControl\UserControl_TaskConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="_View\UserControl\UserControl_ProcessMonitor.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -60,10 +60,7 @@
     <Compile Include="AttachedPproperty\MenuTopLineAttach.cs" />
     <Compile Include="AttachedPproperty\TextInfoElement.cs" />
     <Compile Include="AttachedPproperty\TitleElement.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CommonData.cs" />
-    <Compile Include="Controls\Adorners\AdornerContainer.cs" />
-    <Compile Include="Controls\Adorners\DialogContainer.cs" />
     <Compile Include="Controls\Buttons\Button_AVDecode.xaml.cs">
       <DependentUpon>Button_AVDecode.xaml</DependentUpon>
     </Compile>
@@ -97,7 +94,6 @@
     <Compile Include="Controls\Controls\CalendarWithClock.xaml.cs">
       <DependentUpon>CalendarWithClock.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Controls\Dialog.cs" />
     <Compile Include="Controls\Controls\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>
     </Compile>
@@ -414,6 +410,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\_Styles\ScrollBars\ScrollBarBase_Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\_Styles\TabControls\TabControlInLine_Style.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

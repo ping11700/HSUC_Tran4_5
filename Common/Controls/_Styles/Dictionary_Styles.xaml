@@ -63,36 +63,49 @@
         <!--  *********************************  -->
 
 
-       
-
-        <!--  *********************************  -->
-
 
 
         <!--  *********************************  -->
-        <!--  ToggleButton Styles  -->
-        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Switch.xaml" />
-        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Transparent.xaml" />
 
-        <!--  ToggleButton Styles  -->
-        <!--  *********************************  -->
+
+
 
 
         <!--  *********************************  -->
         <!--  RepeatButtons Styles  -->
+        <!--  RepeatButton_Style  -->
         <ResourceDictionary Source="/Common;component/Controls/_Styles/RepeatButtons/RepeatButton_Style.xaml" />
         <!--  RepeatButtons Styles  -->
         <!--  *********************************  -->
 
 
+        <!--  *********************************  -->
+        <!--  ScrollBars Styles  -->
+        <!--  ScrollBarBase_Style  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ScrollBars/ScrollBarBase_Style.xaml" />
+        <!--  ScrollBars Styles  -->
+        <!--  *********************************  -->
 
 
 
 
         <!--  *********************************  -->
-        <!--  ScrollBars Styles  -->
-        <ResourceDictionary Source="/Common;component/Controls/_Styles/ScrollBars/ScrollBarBase_Style.xaml" />
-        <!--  ScrollBars Styles  -->
+        <!--  TabControls Styles  -->
+        <!--  TabControlInLine_Style  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/TabControls/TabControlInLine_Style.xaml" />
+        <!--  TabControls Styles  -->
+        <!--  *********************************  -->
+
+
+
+        <!--  *********************************  -->
+        <!--  ToggleButton Styles  -->
+        <!--  ToggleButton_Switch  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Switch.xaml" />
+        <!--  ToggleButton_Transparent  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ToggleButtons/ToggleButton_Transparent.xaml" />
+
+        <!--  ToggleButton Styles  -->
         <!--  *********************************  -->
 
 

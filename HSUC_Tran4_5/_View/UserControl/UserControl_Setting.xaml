@@ -43,13 +43,6 @@
                     Margin="3"
                     attach:TextInfoElement.Watermark="主推订阅地址"
                     RegexType="Ip" />
-
-
-                <controls:PasswordBox_Eye
-                    Width="200"
-                    RegexType="IsPassword"
-                    ShowEyeButton="True" />
-
             </StackPanel>
 
 
