@@ -16,6 +16,7 @@ namespace HSUC_Tran4_5._ViewModel
         /// </summary>
         public ViewModel_MainWindow VM_MainWindow { get; private set; }
 
+        public ViewModel_MessageWindow VM_MesgWin{ get; private set; }
 
 
         public void Init()
@@ -43,6 +44,11 @@ namespace HSUC_Tran4_5._ViewModel
             //Main
             VM_MainWindow = new ViewModel_MainWindow();
             VM_MainWindow.Init();
+
+            VM_MesgWin = new ViewModel_MessageWindow();
+
+            VM_MesgWin.Init();
+
 
             // ViewModel间通信
             ViewModelCommunicate();
@@ -75,6 +81,9 @@ namespace HSUC_Tran4_5._ViewModel
         private void ViewModelCommunicate()
         {
 
+            VM_MainWindow.OpenMessageWindowAction += VM_MesgWin.OpenMessageWindow;
+
+
         }
 
         /// <summary>
@@ -82,6 +91,7 @@ namespace HSUC_Tran4_5._ViewModel
         /// </summary>
         private void ViewModelDisConnecte()
         {
+            VM_MainWindow.OpenMessageWindowAction -= VM_MesgWin.OpenMessageWindow;
 
         }
 

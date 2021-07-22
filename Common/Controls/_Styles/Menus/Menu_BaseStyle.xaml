@@ -20,24 +20,22 @@
                 <ControlTemplate TargetType="MenuItem">
                     <Border
                         x:Name="Bd"
-                        MinWidth="120"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         SnapsToDevicePixels="True">
                         <Grid x:Name="Grid" Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="26" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGTColumnGroup" />
-                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <ContentPresenter
                                 x:Name="Icon"
                                 Width="16"
                                 Height="16"
-                                Margin="0,0,10,0"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
                                 ContentSource="Icon"
@@ -436,7 +434,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style BasedOn="{StaticResource MenuItemBaseStyle}" TargetType="MenuItem" />
 
 </ResourceDictionary>

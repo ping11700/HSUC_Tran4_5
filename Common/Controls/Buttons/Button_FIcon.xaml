@@ -15,14 +15,23 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                        <TextBlock
-                            x:Name="tb"
-                            Foreground="{TemplateBinding Foreground}"
-                            Style="{StaticResource FIcon}"
-                            Text="{Binding BFIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <StackPanel Orientation="{Binding Orien, RelativeSource={RelativeSource TemplatedParent}}">
+                            <TextBlock
+                                x:Name="tb"
+                                Foreground="{TemplateBinding Foreground}"
+                                Style="{StaticResource FIcon}"
+                                Text="{Binding BFIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                VerticalAlignment="Center"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                TextElement.Foreground="{Binding TextForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Common_Blue01}" />
                             <Setter TargetName="tb" Property="Foreground" Value="{StaticResource Common_Blue01}" />
                         </Trigger>
                     </ControlTemplate.Triggers>

@@ -26,6 +26,7 @@
             Foreground="White"
             Text="多进程报盘" />
 
+        <controls:Clock_Animation Margin="0,0,120,0" HorizontalAlignment="Right" />
 
 
         <!--  窗体功能区  -->
@@ -35,16 +36,10 @@
             VerticalAlignment="Top"
             Orientation="Horizontal">
 
-            <controls:Button_FIcon
-                Margin="0,0,20,0"
-                BFIcon="&#xe652;"
-                Command="{Binding LoginCmd}"
-                Foreground="{DynamicResource Common_FontWhite}" />
-
             <!--  置顶窗口  -->
             <controls:Button_Fix
                 x:Name="Fix_Btn"
-                Margin="0,2,8,0"
+                Margin="0,0,8,3"
                 BPath="{StaticResource FixGeometry}"
                 Click="Fix_Btn_Click"
                 Tag="WinHeader_FixBtn" />

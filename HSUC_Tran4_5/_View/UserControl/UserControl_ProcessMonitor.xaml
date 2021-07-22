@@ -34,10 +34,24 @@
             <ToggleButton
                 Height="20"
                 HorizontalAlignment="Left"
+                Background="{DynamicResource Common_Gray}"
                 Content="任务监视"
-                FontSize="{DynamicResource FontSize}"
-                Foreground="{StaticResource Common_Black}"
                 Style="{StaticResource ToggleButtonSwitch}" />
+
+            <controls:Button_FIcon
+                Margin="20,0,0,0"
+                BFIcon="&#xe605;"
+                Content="开始任务"
+                Foreground="{DynamicResource Common_Gray}"
+                TextForeground="{DynamicResource Common_FontBlack}" />
+
+
+            <controls:Button_FIcon
+                Margin="10,0,0,0"
+                BFIcon="&#xe607;"
+                Content="停止任务"
+                Foreground="{DynamicResource Common_Gray}"
+                TextForeground="{DynamicResource Common_FontBlack}" />
         </StackPanel>
 
         <!--  进程任务监视  -->
@@ -85,11 +99,13 @@
                 <DataGridTextColumn Binding="{Binding Remark}" Header="备注" />
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
-                <ContextMenu ItemContainerStyle="{StaticResource MenuItemBaseStyle}">
-                    <controls:Button_Text BText="btn1" />
-                    <controls:Button_Text BText="btn2" />
-                    <controls:Button_Text BText="btn3" />
-                    <controls:Button_Text BText="btn4" />
+                <ContextMenu Background="{StaticResource Common_Grayf5}">
+                    <controls:Button_Text BText="任务配置" Command="{Binding OpenTaskCongifCmd}" />
+                    <controls:Button_Text BText="强制结束任务" />
+                    <controls:Button_Text BText="打开状态窗口" />
+                    <controls:Button_Text BText="关闭状态窗口" />
+                    <controls:Button_Text BText="从任务监视中删除" />
+                    <controls:Button_Text BText="加入任务监视中" />
                 </ContextMenu>
             </DataGrid.ContextMenu>
 

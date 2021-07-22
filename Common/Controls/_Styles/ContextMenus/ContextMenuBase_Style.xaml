@@ -4,24 +4,55 @@
         <ResourceDictionary Source="/Common;component/Controls/ScrollViewers/ScrollViewer_Anima.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="ContextMenuItemBaseStyle" TargetType="MenuItem">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Foreground" Value="{DynamicResource Common_FontBlack}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border
+                        x:Name="Bd"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        SnapsToDevicePixels="True">
+                        <ContentPresenter
+                            x:Name="ContentPresenter"
+                            Grid.Column="1"
+                            Margin="{TemplateBinding Padding}"
+                            ContentSource="Header"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Common_Grayf5}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value=".4" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 
 
     <Style x:Key="ContextMenuBase_Style" TargetType="ContextMenu">
-        <Setter Property="Background" Value="{DynamicResource Common_White05}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ContextMenuItemBaseStyle}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContextMenu">
-                    <Border
-                        MaxHeight="{TemplateBinding MaxHeight}"
-                        Margin="8"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{DynamicResource BorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="2"
-                        Effect="{StaticResource EffectShadow2}">
-                        <ScrollViewer Margin="0,6" Style="{StaticResource ScrollViewer_AnimaStyle}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="{StaticResource Common_CornerRadius04}">
+                        <ScrollViewer Style="{StaticResource ScrollViewer_AnimaStyle}">
                             <ItemsPresenter />
                         </ScrollViewer>
                     </Border>

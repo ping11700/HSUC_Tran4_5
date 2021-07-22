@@ -13,6 +13,7 @@
     d:DataContext="{d:DesignInstance vm:ViewModel_MainWindow}"
     Background="Gray"
     Style="{DynamicResource WindowChromeStyle}"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
         <ResourceDictionary>
@@ -47,10 +48,35 @@
                 <local:UserControl_Setting />
             </controls:TabItem_FIcon>
 
-            <controls:TabItem_FIcon Header="设置" TIFIcon="&#xe604;">
-                <controls:Clock_Animation />
-            </controls:TabItem_FIcon>
-            <!--  时钟  -->
+
         </TabControl>
+
+
+        <!--  Tools  -->
+        <StackPanel
+            Grid.RowSpan="2"
+            Margin="12,0,0,20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <!--  更新  -->
+            <controls:Button_FIcon
+                Margin="0,0,0,10"
+                BFIcon="&#xe641;"
+                Command="{Binding OpenUpdataCmd}"
+                Content="更新"
+                Foreground="{DynamicResource Common_FontWhite}"
+                Orien="Vertical"
+                TextForeground="{DynamicResource Common_FontWhite}" />
+
+            <!--  登录  -->
+            <controls:Button_FIcon
+                BFIcon="&#xe652;"
+                Command="{Binding OpenLoginCmd}"
+                Content="登录"
+                Foreground="{DynamicResource Common_FontWhite}"
+                Orien="Vertical"
+                TextForeground="{DynamicResource Common_FontWhite}" />
+        </StackPanel>
     </Grid>
 </Window>

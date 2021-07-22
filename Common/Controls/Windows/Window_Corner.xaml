@@ -44,7 +44,7 @@
                                 Height="16"
                                 Margin="0,-8,0,0"
                                 Cursor="Hand"
-                                Foreground="{DynamicResource Common_Blue01}"
+                                Foreground="{DynamicResource Common_Black}"
                                 Style="{StaticResource PathButtonStyle}"
                                 Visibility="{Binding IsShowMin, Converter={StaticResource boolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}">
                                 <Path Data="{StaticResource pathMin}" />
@@ -56,7 +56,7 @@
                                 Width="16"
                                 Height="16"
                                 Cursor="Hand"
-                                Foreground="{DynamicResource Common_Blue01}"
+                                Foreground="{DynamicResource Common_Black}"
                                 Style="{StaticResource PathButtonStyle}"
                                 Visibility="{Binding IsShowClose, Converter={StaticResource boolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}">
                                 <Path Data="{StaticResource pathClose}" />

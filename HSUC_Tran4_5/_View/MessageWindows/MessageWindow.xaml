@@ -10,7 +10,10 @@
     Background="{DynamicResource Common_White}"
     IsCanMove="False"
     IsShowClose="True"
-    Style="{DynamicResource Window_CornerStyle}">
+    ShowInTaskbar="False"
+    Style="{DynamicResource Window_CornerStyle}"
+    WindowStartupLocation="CenterScreen">
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -18,13 +21,26 @@
             </ResourceDictionary.MergedDictionaries>
 
             <local:MessageWinTemplateSelector x:Key="MessageWinSelector" />
-            <local:UserControl_TaskConfig x:Key="uc_TaskConfig" />
-            <local:UserControl_Login x:Key="uc_Login" />
+
+            <DataTemplate x:Key="uc_TaskConfigDataTemplate">
+                <local:UserControl_TaskConfig />
+            </DataTemplate>
+            <DataTemplate x:Key="uc_LoginDataTemplate">
+                <local:UserControl_Login />
+            </DataTemplate>
+            <DataTemplate x:Key="uc_UpdataDataTemplate">
+                <local:UserControl_Updata />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
-    <ContentControl
-        DataContext="{Binding RelativeSource={RelativeSource AncestorType=ContentControl},Path=DataContext}"
-        Name="MyContentControl"
-        Content="{Binding MessageWinType}"
-        ContentTemplateSelector="{StaticResource MessageWinSelector}" />
+    <Border
+        BorderBrush="{DynamicResource Common_Black}"
+        BorderThickness="0.5"
+        CornerRadius="{StaticResource Common_CornerRadius01}"
+        SnapsToDevicePixels="True">
+        <ContentControl
+            Name="MyContentControl"
+            Content="{Binding MessageWinType}"
+            ContentTemplateSelector="{StaticResource MessageWinSelector}" />
+    </Border>
 </controls:Window_Corner>

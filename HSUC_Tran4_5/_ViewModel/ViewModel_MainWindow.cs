@@ -1,6 +1,7 @@
 ﻿using Common;
 using HSUC_Tran4_5._Model;
 using HSUC_Tran4_5._View;
+using HSUC_Tran4_5.Utils;
 using System;
 
 namespace HSUC_Tran4_5._ViewModel
@@ -17,10 +18,23 @@ namespace HSUC_Tran4_5._ViewModel
         ///     切换例子命令
         /// </summary>
 
-        public UCCommand LoginCmd => new Lazy<UCCommand>(() =>
-            new UCCommand(Login)).Value;
+        public UCCommand OpenLoginCmd => new Lazy<UCCommand>(() =>
+            new UCCommand(OpenLogin)).Value;
 
-       
+
+        public UCCommand OpenTaskCongifCmd => new Lazy<UCCommand>(() =>
+            new UCCommand(OpenTaskConfig)).Value;
+
+
+        public UCCommand OpenUpdataCmd => new Lazy<UCCommand>(() =>
+            new UCCommand(OpenUpdata)).Value;
+
+
+        
+
+
+        public Action<MessWinTypes> OpenMessageWindowAction;
+
 
         #endregion
 
@@ -55,15 +69,35 @@ namespace HSUC_Tran4_5._ViewModel
         /// <summary>
         /// 登录
         /// </summary>
-        private void Login()
+        private void OpenLogin()
         {
-            MessageWindow messageWin = new MessageWindow();
+            OpenMessageWindowAction?.Invoke(MessWinTypes.Login);
+        }
 
-            messageWin.Show();
 
+        /// <summary>
+        /// 更新
+        /// </summary>
+        private void OpenUpdata()
+        {
+            OpenMessageWindowAction?.Invoke(MessWinTypes.Update);
+        }
+
+
+        #region ContextMenu 右键菜单
+
+        /// <summary>
+        /// 任务配置
+        /// </summary>
+        private void OpenTaskConfig()
+        {
+            OpenMessageWindowAction?.Invoke(MessWinTypes.TaskConfig);
         }
 
 
 
+
+
+        #endregion
     }
 }

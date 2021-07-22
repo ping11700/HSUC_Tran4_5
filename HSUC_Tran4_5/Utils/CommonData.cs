@@ -2,7 +2,7 @@
 
 namespace HSUC_Tran4_5.Utils
 {
-    internal enum MessWinTypes
+    public enum MessWinTypes
     { 
     
         //任务配置
@@ -11,7 +11,10 @@ namespace HSUC_Tran4_5.Utils
 
         //登录
         Login,
-    
+
+
+        //更新
+        Update,
     }
     
 }

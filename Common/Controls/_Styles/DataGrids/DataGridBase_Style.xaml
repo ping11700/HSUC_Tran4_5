@@ -209,7 +209,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#f5f5f5" />
+                <Setter Property="Background" Value="{DynamicResource Common_Grayf5}" />
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="{DynamicResource Common_Blue01}" />
@@ -220,7 +220,7 @@
                     <Condition Property="IsSelected" Value="true" />
                     <Condition Property="Selector.IsSelectionActive" Value="false" />
                 </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="#f5f5f5" />
+                <Setter Property="Background" Value="{DynamicResource Common_Grayf5}" />
                 <Setter Property="Foreground" Value="#212121" />
             </MultiTrigger>
         </Style.Triggers>
@@ -283,7 +283,7 @@
                     <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
                     <Condition Binding="{Binding SelectionUnit, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}" Value="Cell" />
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource Common_FontBlack}" />
                 <Setter Property="Background" Value="{DynamicResource Common_Blue01}" />
             </MultiDataTrigger>
             <MultiDataTrigger>
@@ -292,7 +292,7 @@
                     <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Value="False" />
                     <Condition Binding="{Binding SelectionUnit, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}" Value="CellOrRowHeader" />
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource Common_FontBlack}" />
                 <Setter Property="Background" Value="{DynamicResource Common_Blue01}" />
             </MultiDataTrigger>
             <MultiDataTrigger>
@@ -394,7 +394,7 @@
 
     <Style x:Key="ProcessesDataGridStyle" TargetType="DataGrid">
         <Setter Property="Background" Value="{DynamicResource Common_White05}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="GridLinesVisibility" Value="None" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
@@ -546,7 +546,7 @@
 
     <Style x:Key="LogsDataGridStyle" TargetType="DataGrid">
         <Setter Property="Background" Value="{DynamicResource Common_White05}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="GridLinesVisibility" Value="None" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />

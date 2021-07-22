@@ -10,11 +10,12 @@ namespace HSUC_Tran4_5._View
         public static ViewManager Instance => lazy.Value;
 
         public MainWindow MainWin { get; init; }
+        public MessageWindow MesgWin { get; init; }
 
         private ViewManager() {
         
             MainWin = new MainWindow() { DataContext = ViewModelManager.Instance.VM_MainWindow };
-
+            MesgWin = new MessageWindow() { DataContext = ViewModelManager.Instance.VM_MesgWin };
         }
 
 
@@ -25,6 +26,8 @@ namespace HSUC_Tran4_5._View
         public void Init()
         {
             MainWin.Show();
+
+            MesgWin.Owner = MainWin;
         }
 
 

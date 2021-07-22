@@ -6,7 +6,7 @@ using System;
 
 namespace HSUC_Tran4_5._ViewModel
 {
-    public partial class ViewModel_MessageWindow : ViewModelBase
+    public class ViewModel_MessageWindow : ViewModelBase
     {
 
         private MessWinTypes messageWinType;
@@ -25,13 +25,7 @@ namespace HSUC_Tran4_5._ViewModel
 
         #region 命令
 
-        /// <summary>
-        ///     切换例子命令
-        /// </summary>
-
-        public UCCommand LoginCmd => new Lazy<UCCommand>(() =>
-            new UCCommand(Login)).Value;
-
+       
        
 
         #endregion
@@ -44,15 +38,14 @@ namespace HSUC_Tran4_5._ViewModel
 
 
 
-        internal ViewModel_MainWindow()
+        internal ViewModel_MessageWindow()
         {
-            DataSer = new DataService();
+            
         }
 
 
         public override void Init()
         {
-            Start_VM01();
         }
 
 
@@ -60,22 +53,32 @@ namespace HSUC_Tran4_5._ViewModel
         public override void Dispose()
         {
 
+          
+            
         }
 
 
 
-        /// <summary>
-        /// 登录
-        /// </summary>
-        private void Login()
+
+
+        internal void OpenMessageWindow(MessWinTypes winType) 
         {
-            MessageWindow messageWin = new MessageWindow();
+            switch (winType)
+            {
+                case MessWinTypes.TaskConfig:
+                    MessageWinType = MessWinTypes.TaskConfig;
+                    break;
+                case MessWinTypes.Login:
+                    MessageWinType = MessWinTypes.Login;
+                    break;
+                case MessWinTypes.Update:
+                    MessageWinType = MessWinTypes.Update;
+                    break;
+                default:
+                    break;
+            }
 
-            messageWin.Show();
-
+            ViewManager.Instance.MesgWin.ShowDialog();
         }
-
-
-
     }
 }

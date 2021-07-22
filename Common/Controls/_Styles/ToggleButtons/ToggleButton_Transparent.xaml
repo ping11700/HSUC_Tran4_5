@@ -8,15 +8,7 @@
         <ResourceDictionary Source="/Common;component/Resources/CommonResources/CommonResources.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <DropShadowEffect
-        x:Key="EffectShadow"
-        o:Freeze="True"
-        BlurRadius="8"
-        Direction="270"
-        Opacity=".2"
-        RenderingBias="Performance"
-        ShadowDepth="1.5"
-        Color="#88000000" />
+
 
     <Style x:Key="RectangleFocusVisual" TargetType="Rectangle">
         <Setter Property="Margin" Value="-2" />

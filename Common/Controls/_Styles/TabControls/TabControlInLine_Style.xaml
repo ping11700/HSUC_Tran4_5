@@ -38,7 +38,7 @@
                             Focusable="False"
                             RecognizesAccessKey="True"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            TextElement.Foreground="{DynamicResource PrimaryTextBrush}" />
+                            TextElement.Foreground="{DynamicResource Common_FontBlack}" />
                     </local:SimplePanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="False">
@@ -50,7 +50,7 @@
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource Common_Blue01}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Common_Blue01}" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -58,7 +58,7 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Top" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Panel.ZIndex" Value="1" />
-                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource PrimaryBrush}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Common_Blue01}" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,0,0,3" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
@@ -67,7 +67,7 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Left" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Panel.ZIndex" Value="1" />
-                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource PrimaryBrush}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Common_Blue01}" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,0,3,0" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
@@ -76,7 +76,7 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Bottom" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Panel.ZIndex" Value="1" />
-                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource PrimaryBrush}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Common_Blue01}" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="0,3,0,0" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
@@ -85,7 +85,7 @@
                                 <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Right" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Panel.ZIndex" Value="1" />
-                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource PrimaryBrush}" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Common_Blue01}" />
                             <Setter TargetName="mainBorder" Property="BorderThickness" Value="3,0,0,0" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
@@ -95,8 +95,7 @@
     </Style>
 
     <Style x:Key="TabControlBaseStyle" TargetType="TabControl">
-        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
-        <Setter Property="Background" Value="{DynamicResource RegionBrush}" />
+        <Setter Property="Background" Value="{DynamicResource Common_White}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource Common_White}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource TabItemStyle}" />
@@ -134,7 +133,7 @@
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="{TemplateBinding Background}"
-                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderBrush="{DynamicResource Common_Blue01}"
                                 BorderThickness="0,1,0,0"
                                 KeyboardNavigation.DirectionalNavigation="Contained"
                                 KeyboardNavigation.TabIndex="2"
@@ -224,8 +223,6 @@
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="{TemplateBinding Background}"
-                                BorderBrush="{DynamicResource BorderBrush}"
-                                BorderThickness="0,1,0,0"
                                 KeyboardNavigation.DirectionalNavigation="Contained"
                                 KeyboardNavigation.TabIndex="2"
                                 KeyboardNavigation.TabNavigation="Local">

@@ -21,6 +21,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock
             Grid.Row="0"
@@ -28,14 +29,168 @@
             Text="任务配置" />
         <TabControl Grid.Row="1" Style="{StaticResource TabControlInLineStyle}">
             <TabItem Header="委托申报">
-                <TextBlock Text="1" />
+                <StackPanel Margin="50,20,0,0">
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="每笔委托申报后等待" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="0"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="毫秒" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="未取得委托等待" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="3000"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="毫秒" />
+                    </StackPanel>
+
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="委托发送线程个数" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="3"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="个" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="下次触发SQLSERVER灾备(只生效一次)" />
+                        <ToggleButton
+                            Height="20"
+                            Margin="10,0,0,0"
+                            Style="{StaticResource ToggleButtonSwitch}" />
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
             <TabItem Header="委托确认">
-                <TextBlock Text="2" />
+                <StackPanel Margin="50,20,0,0">
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="接口库中无可处理数据时等待" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="100"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="毫秒" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="每次从接口库取" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="200"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="笔数据" />
+                    </StackPanel>
+
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="委托确认线程个数" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="10"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="个" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="每个席位处理" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="20"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="笔, 确认数据后更新数据库标志" />
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
             <TabItem Header="成交回报">
-                <TextBlock Text="3" />
+                <StackPanel Margin="50,20,0,0">
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="接口库中无可处理数据时等待" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="100"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="毫秒" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="每次从接口库取" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="200"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="笔数据" />
+                    </StackPanel>
+
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="成交处理线程个数" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="10"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="个" />
+                    </StackPanel>
+
+
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="每个席位处理" />
+                        <controls:NumericUpDown
+                            MinWidth="60"
+                            Margin="3"
+                            Minimum="20"
+                            ShowUpDownButton="True" />
+                        <TextBlock VerticalAlignment="Center" Text="笔, 确认数据后更新数据库标志" />
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
         </TabControl>
+        <StackPanel
+            Grid.Row="2"
+            Margin="0,0,0,10"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                Width="60"
+                Height="25"
+                Margin="0,0,30,0"
+                attach:BorderElement.CornerRadius="{StaticResource Common_CornerRadius04}"
+                Background="{DynamicResource Common_Blue01}"
+                Content="确认"
+                Style="{StaticResource ButtonBaseStyle}" />
+
+            <Button
+                Width="60"
+                Height="25"
+                Margin="0,0,40,0"
+                attach:BorderElement.CornerRadius="{StaticResource Common_CornerRadius04}"
+                Background="{DynamicResource Common_Blue01}"
+                Content="取消"
+                Style="{StaticResource ButtonBaseStyle}" />
+        </StackPanel>
+
     </Grid>
 </UserControl>

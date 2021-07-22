@@ -83,7 +83,9 @@
     <Compile Include="_View\MessageWindows\MessageWindow.xaml.cs">
       <DependentUpon>MessageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="_View\UserControl\TemplateSelector\MessageWinTemplateSelector.cs" />
+    <Compile Include="_View\UserControl\UserControl_Updata.xaml.cs">
+      <DependentUpon>UserControl_Updata.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_View\UserControl\UserControl_Login.xaml.cs">
       <DependentUpon>UserControl_Login.xaml</DependentUpon>
     </Compile>
@@ -99,6 +101,7 @@
     <Compile Include="_View\UserControl\UserControl_WinHeader.xaml.cs">
       <DependentUpon>UserControl_WinHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_View\TemplateSelectors\MessageWinTemplateSelector.cs" />
     <Compile Include="_View\ViewManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -119,6 +122,10 @@
     <Page Include="_View\MessageWindows\MessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="_View\UserControl\UserControl_Updata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="_View\UserControl\UserControl_Login.xaml">
       <Generator>MSBuild:Compile</Generator>

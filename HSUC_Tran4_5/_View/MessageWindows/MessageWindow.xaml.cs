@@ -24,5 +24,11 @@ namespace HSUC_Tran4_5._View
         {
             InitializeComponent();
         }
+
+
+        protected override void WinClose(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
