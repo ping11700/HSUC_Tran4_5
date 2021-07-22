@@ -26,11 +26,20 @@
         <!--  CheckBoxs Styles  -->
         <!--  *********************************  -->
 
+
+        <!--  *********************************  -->
+        <!--  ComboBoxes Styles  -->
+        <!--  ComboBoxBase_Style  -->
+        <ResourceDictionary Source="/Common;component/Controls/_Styles/ComboBoxes/ComboBoxBase_Style.xaml" />
+        <!--  ComboBoxes Styles  -->
+        <!--  *********************************  -->
+
+
+
         <!--  *********************************  -->
         <!--  ContextMenus Styles  -->
         <!--  ContextMenuBase_Style Styles  -->
         <ResourceDictionary Source="/Common;component/Controls/_Styles/ContextMenus/ContextMenuBase_Style.xaml" />
-
         <!--  ContextMenus Styles  -->
         <!--  *********************************  -->
 

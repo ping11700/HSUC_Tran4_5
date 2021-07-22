@@ -49,9 +49,12 @@
             <controls:Button_FIcon
                 Margin="10,0,0,0"
                 BFIcon="&#xe607;"
-                Content="停止任务"
+                Content=" 停止任务"
                 Foreground="{DynamicResource Common_Gray}"
                 TextForeground="{DynamicResource Common_FontBlack}" />
+
+
+            <ComboBox Margin="20,0,0,0" Style="{StaticResource ComboBoxBaseStyle}" />
         </StackPanel>
 
         <!--  进程任务监视  -->
