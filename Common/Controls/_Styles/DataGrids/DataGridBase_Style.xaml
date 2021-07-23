@@ -75,7 +75,7 @@
                                     Foreground="{DynamicResource Common_Blue01}"
                                     IsEnabled="False"
                                     Opacity="1"
-                                    Style="{StaticResource ToggleButtonTransparent}" />
+                                    Style="{StaticResource ToggleButtonPath}" />
                             </Grid>
                         </Border>
                         <Thumb
@@ -147,12 +147,10 @@
 
 
     <Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
-        <Setter Property="Background" Value="#ffffff" />
-        <Setter Property="Foreground" Value="#212121" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="Margin" Value="0,0,0,2" />
-        <Setter Property="Padding" Value="0,6" />
-        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="MinHeight" Value="25" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="ValidationErrorTemplate">
             <Setter.Value>
@@ -211,18 +209,30 @@
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="Background" Value="{DynamicResource Common_Grayf5}" />
             </Trigger>
+
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="{DynamicResource Common_Blue01}" />
-                <Setter Property="TextElement.Foreground" Value="Black" />
             </Trigger>
+
+
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                    <Condition Binding="{Binding ContextMenu.IsOpen, RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource Common_Blue01}" />
+                <Setter Property="Foreground" Value="White" />
+            </MultiDataTrigger>
             <MultiTrigger>
-                <MultiTrigger.Conditions>
+                <!--<MultiTrigger.Conditions>
                     <Condition Property="IsSelected" Value="true" />
                     <Condition Property="Selector.IsSelectionActive" Value="false" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Background" Value="{DynamicResource Common_Grayf5}" />
-                <Setter Property="Foreground" Value="#212121" />
+                <Setter Property="Foreground" Value="{DynamicResource Common_Black21}" />-->
             </MultiTrigger>
+
         </Style.Triggers>
     </Style>
 
@@ -311,12 +321,12 @@
                 <Setter Property="Foreground" Value="White" />
             </MultiDataTrigger>
             <MultiTrigger>
-                <MultiTrigger.Conditions>
+                <!--<MultiTrigger.Conditions>
                     <Condition Property="IsSelected" Value="true" />
                     <Condition Property="Selector.IsSelectionActive" Value="false" />
                 </MultiTrigger.Conditions>
                 <Setter Property="Foreground" Value="Black" />
-                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Background" Value="Transparent" />-->
             </MultiTrigger>
         </Style.Triggers>
     </Style>
@@ -410,7 +420,6 @@
         <Setter Property="RowHeaderStyle" Value="{StaticResource DataGridRowHeaderStyle}" />
         <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}" />
         <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}" />
-        <Setter Property="Padding" Value="6" />
         <Setter Property="ColumnWidth" Value="*" />
         <!--<Setter Property="attach:DataGridAttach.TextColumnStyle" Value="{StaticResource DataGridTextColumnStyle}" />
         <Setter Property="attach:DataGridAttach.EditingTextColumnStyle" Value="{StaticResource TextBox_ErrorBaseStyle}" />

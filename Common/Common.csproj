@@ -25,7 +25,7 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -60,6 +60,7 @@
     <Compile Include="AttachedPproperty\MenuTopLineAttach.cs" />
     <Compile Include="AttachedPproperty\TextInfoElement.cs" />
     <Compile Include="AttachedPproperty\TitleElement.cs" />
+    <Compile Include="ControlCommands.cs" />
     <Compile Include="CommonData.cs" />
     <Compile Include="Controls\Buttons\Button_AVDecode.xaml.cs">
       <DependentUpon>Button_AVDecode.xaml</DependentUpon>
@@ -91,12 +92,16 @@
     <Compile Include="Controls\Buttons\Button_Text.xaml.cs">
       <DependentUpon>Button_Text.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Controls\Drawer.xaml.cs">
+      <DependentUpon>Drawer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Controls\CalendarWithClock.xaml.cs">
       <DependentUpon>CalendarWithClock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Controls\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Controls\AdornerContainer.cs" />
     <Compile Include="Controls\Controls\ClockBase.cs" />
     <Compile Include="Controls\Controls\ClockNumber_Animation.cs" />
     <Compile Include="Controls\Controls\Clock_Animation.xaml.cs">
@@ -208,6 +213,7 @@
     <Compile Include="SystemAPI\WindowAPI.cs" />
     <Compile Include="UAssert.cs" />
     <Compile Include="UCCommand.cs" />
+    <Compile Include="Utils\DesignerHelper.cs" />
     <Compile Include="Utils\AnimationHelper.cs" />
     <Compile Include="Utils\ArithmeticHelper.cs" />
     <Compile Include="Utils\DeepCopyHelper.cs" />
@@ -262,6 +268,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Buttons\Button_Text.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Controls\Drawer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

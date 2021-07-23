@@ -79,4 +79,13 @@
         /// </summary>
         Freedom
     }
+
+
+
+     public enum DrawerShowMode
+    {
+        Cover,
+        Push,
+        Press
+    }
 }

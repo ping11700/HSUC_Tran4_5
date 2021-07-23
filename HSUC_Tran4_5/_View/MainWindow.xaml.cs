@@ -3,6 +3,7 @@ using Common.SystemAPI;
 using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace HSUC_Tran4_5._View
@@ -29,7 +30,7 @@ namespace HSUC_Tran4_5._View
 
 
         #region 页面交互
-        private void Window_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -52,6 +53,11 @@ namespace HSUC_Tran4_5._View
             base.OnClosing(e);
 
             TaskbarAPI.RemoveAutoShowTaksBar(this);
+        }
+
+        private void TabControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

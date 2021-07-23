@@ -49,6 +49,7 @@
                 Margin="0,0,8,0"
                 BPath="{StaticResource MinGeometry}"
                 Click="Min_Click"
+                Foreground="{DynamicResource Common_White}"
                 Tag="WinHeader_MinBtn" />
             <!--  最大化窗口  -->
             <controls:Button_Path
@@ -56,12 +57,14 @@
                 Margin="0,0,8,0"
                 BPath="{StaticResource MaxGeometry}"
                 Click="Max_Click"
+                Foreground="{DynamicResource Common_White}"
                 Tag="WinHeader_MaxBtn" />
 
             <!--  关闭窗口  -->
             <controls:Button_Path
                 BPath="{StaticResource CloseGeometry}"
                 Click="Close_Click"
+                Foreground="{DynamicResource Common_White}"
                 Tag="WinHeader_CloseBtn" />
         </StackPanel>
     </Grid>

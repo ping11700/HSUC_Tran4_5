@@ -17,7 +17,7 @@
                 <WindowChrome
                     CaptionHeight="0"
                     CornerRadius="{StaticResource Common_CornerRadius01}"
-                    GlassFrameThickness="0"
+                    GlassFrameThickness="1"
                     NonClientFrameEdges="None" />
             </Setter.Value>
         </Setter>
@@ -25,7 +25,6 @@
             <Setter.Value>
                 <!--  Window模板  -->
                 <ControlTemplate TargetType="{x:Type local:Window_Corner}">
-                    <!--<Border BorderThickness="0.5" BorderBrush="#26FFFFFF">-->
                     <Grid Background="{TemplateBinding Background}">
                         <!--  内容  -->
                         <ContentPresenter ClipToBounds="True" />

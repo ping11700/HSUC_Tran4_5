@@ -36,7 +36,7 @@
     <Border
         BorderBrush="{DynamicResource Common_Black}"
         BorderThickness="0.5"
-        CornerRadius="{StaticResource Common_CornerRadius01}"
+        CornerRadius="6"
         SnapsToDevicePixels="True">
         <ContentControl
             Name="MyContentControl"

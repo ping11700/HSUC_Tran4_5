@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attach="clr-namespace:Common.AttachedPproperty;assembly=Common"
+    xmlns:common="clr-namespace:Common;assembly=Common"
     xmlns:controls="clr-namespace:Common.Controls;assembly=Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -17,8 +18,6 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -26,6 +25,36 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+
+        <controls:Drawer
+            x:Name="Drawer_right"
+            Dock="Right"
+            ShowMode="Push">
+            <Border
+                Width="300"
+                Background="{DynamicResource Common_White}"
+                BorderBrush="{DynamicResource Common_Blue01}"
+                BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Foreground="Black"
+                        Text="Header" />
+                    <controls:Button_Path
+                        Grid.Row="0"
+                        HorizontalAlignment="Right"
+                        BPath="{StaticResource DeleteFillCircleGeometry}"
+                        Command="common:ControlCommands.Close"
+                        Foreground="{DynamicResource Common_Black}" />
+                </Grid>
+            </Border>
+        </controls:Drawer>
+
         <!--  工具  -->
         <StackPanel
             Grid.Row="0"
@@ -55,6 +84,7 @@
 
 
             <ComboBox Margin="20,0,0,0" Style="{StaticResource ComboBoxBaseStyle}" />
+
         </StackPanel>
 
         <!--  进程任务监视  -->
@@ -102,11 +132,13 @@
                 <DataGridTextColumn Binding="{Binding Remark}" Header="备注" />
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
-                <ContextMenu Background="{StaticResource Common_Grayf5}">
+                <ContextMenu Name="contextMenu" Background="{StaticResource Common_Grayf5}">
                     <controls:Button_Text BText="任务配置" Command="{Binding OpenTaskCongifCmd}" />
-                    <controls:Button_Text BText="强制结束任务" />
-                    <controls:Button_Text BText="打开状态窗口" />
-                    <controls:Button_Text BText="关闭状态窗口" />
+                    <controls:Button_Text BText="强制结束任务" Command="{Binding ForceStopTaskCmd}" />
+                    <ToggleButton
+                        Content="切换状态窗口"
+                        IsChecked="{Binding IsOpen, ElementName=Drawer_right}"
+                        Style="{StaticResource ToggleButtonText}" />
                     <controls:Button_Text BText="从任务监视中删除" />
                     <controls:Button_Text BText="加入任务监视中" />
                 </ContextMenu>

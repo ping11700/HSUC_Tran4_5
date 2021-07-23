@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace HSUC_Tran4_5._View
 {
@@ -10,6 +11,8 @@ namespace HSUC_Tran4_5._View
         public UserControl_ProcessMonitor()
         {
             InitializeComponent();
+            NameScope.SetNameScope(this.contextMenu, NameScope.GetNameScope(this));
         }
+
     }
 }

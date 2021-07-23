@@ -16,16 +16,13 @@
                         <Path
                             x:Name="PART_Path"
                             Data="{Binding BPath, RelativeSource={RelativeSource TemplatedParent}}"
+                            Fill="{TemplateBinding Foreground}"
                             Stretch="Uniform" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="PART_Path" Property="Fill" Value="{Binding BColor, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="False">
-                            <Setter TargetName="PART_Path" Property="Fill" Value="White" />
-                        </Trigger>
-
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
