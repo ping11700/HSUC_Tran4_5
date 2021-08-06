@@ -18,6 +18,8 @@ namespace HSUC_Tran4_5._View
             InitializeComponent();
 
             this.Loaded += MainWindow_Loaded;
+
+            string a = System.AppDomain.CurrentDomain.BaseDirectory;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

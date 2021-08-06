@@ -26,11 +26,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-
+        <!--  抽屉  -->
         <controls:Drawer
             x:Name="Drawer_right"
             Dock="Right"
-            ShowMode="Push">
+            ShowMode="Press">
             <Border
                 Width="300"
                 Background="{DynamicResource Common_White}"

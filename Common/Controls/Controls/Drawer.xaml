@@ -8,6 +8,6 @@
 
     <Style x:Key="DrawerBaseStyle" TargetType="local:Drawer">
         <Setter Property="Dock" Value="Right" />
-        <Setter Property="MaskBrush" Value="#40000000" />
+        <Setter Property="MaskBrush" Value="Blue" />
     </Style>
 </ResourceDictionary>
